@@ -21,7 +21,7 @@ public:
     vector<vector<Resource>> libraryResources{4};
     //2D vector : 1st row:books, 2nd row:articles, 3rd row:digital content, 4th row: other
 
-    list<User> libraryUsers;
+    vector<User> libraryUsers;
 
 
     //ADDING/REMOVING
