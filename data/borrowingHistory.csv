@@ -1,0 +1,1 @@
+UserID,username,isAdmin,password,indexOfReservedResource1,indexOfReservedResource2,indexOfBorrowedResource1,indexOfBorrowedResource2,dueDay,dueMonth,dueYear,isPhysical,ResourceID1,ResourceID2,type,title,author,publicationYear,quantity,availability,isBorrowed,numberOfReservations,returningDay,returningMonth,returningYear,returnedOnTime
