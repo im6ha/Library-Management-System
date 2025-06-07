@@ -8,7 +8,7 @@ editWindow::editWindow(LibraryManagementSystem* mainWin, QWidget *parent)
     ui->setupUi(this);
     setWindowTitle("Library Management System");
     QLabel *background = new QLabel(this);
-    QPixmap pixmap("../../media/background.png");
+    QPixmap pixmap(":/media/media/background.png");
     background->setPixmap(pixmap);
     background->setScaledContents(true);
     background->resize(this->size());
