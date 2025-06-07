@@ -168,3 +168,6 @@ DISTFILES += \
 SUBDIRS += \
     third_party/smtp/src/SMTPEmail.pro \
     third_party/smtp/src/SMTPEmail.pro
+
+RESOURCES += \
+    resources.qrc
