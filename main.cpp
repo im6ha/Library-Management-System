@@ -15,10 +15,10 @@ public:
     QIcon standardIcon(StandardPixmap icon, const QStyleOption* option = nullptr,
                        const QWidget* widget = nullptr) const override {
         if (icon == QStyle::SP_MessageBoxWarning) {
-            return QIcon("../../media/warning.png");
+            return QIcon(":/media/media/warning.png");
         }
         if (icon == QStyle::SP_MessageBoxInformation) {
-            return QIcon("../../media/information.png");
+            return QIcon(":/media/media/information.png");
         }
         return QProxyStyle::standardIcon(icon, option, widget);
     }
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     QFont font("Monotype Corsiva", 17);
     QApplication::setFont(font);
-    a.setWindowIcon(QIcon("../../media/icon.png"));
+    a.setWindowIcon(QIcon(":/media/media/icon.png"));
     a.setStyle(new CustomMessageBoxStyle);
     a.setStyleSheet(
         "QPushButton {"
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
         "}"
 
         "QHeaderView::section {"
-        "background-image: url(../../media/tableHeaderBG.png);"
+        "background-image: url(:/media/media/tableHeaderBG.png);"
         "color: white;"
         "border: 1px solid #666;"
         "padding: 5px;"
