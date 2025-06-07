@@ -2,6 +2,7 @@
 #include "library.h"
 #include <fstream>
 #include <algorithm>
+#include "qdir.h"
 #include "smtp/src/smtpclient.h"
 #include "smtp/src/mimemessage.h"
 #include "smtp/src/mimetext.h"
@@ -138,7 +139,7 @@ bool Helper:: confirmAction(QWidget *parent) {
 
 
 void Helper::saveLibraryResources() {
-    ofstream saveLibraryResourcesCSV("../../data/libraryResources.csv");
+    ofstream saveLibraryResourcesCSV("../data/libraryResources.csv");
     saveLibraryResourcesCSV << "ID1,ID2,Type,Title,Author,PublicationYear,Quantity,Availability,isBorrowed,Reservations\n";
     for (int i=0; i<4; i++){
         for (Resource r : Library::mainLibrary().libraryResources[i]){
@@ -237,11 +238,11 @@ void Helper::saveUserData(string file, vector<User> vector){
     saveUsersCSV.close();
 }
 void Helper::saveUsers() {
-    Helper::saveUserData("../../data/users.csv", Library::mainLibrary().libraryUsers);
+    Helper::saveUserData("../data/users.csv", Library::mainLibrary().libraryUsers);
 }
 
 void Helper::saveBorrowingHistory() {
-        ofstream saveBorrowingHistoryCSV("../../data/borrowingHistory.csv");
+        ofstream saveBorrowingHistoryCSV("../data/borrowingHistory.csv");
         saveBorrowingHistoryCSV << "UserID,username,isAdmin,password,indexOfReservedResource1,indexOfReservedResource2,"
                                    "indexOfBorrowedResource1,indexOfBorrowedResource2,dueDay,dueMonth,dueYear,"
                                    "isPhysical,ResourceID1,ResourceID2,type,title,author,publicationYear,quantity,availability,"
@@ -349,7 +350,7 @@ void Helper::saveBorrowingHistory() {
     }
 
     void Helper::saveLibraryEvents() {
-        ofstream saveLibraryEventsCSV("../../data/libraryEvents.csv");
+        ofstream saveLibraryEventsCSV("../data/libraryEvents.csv");
         saveLibraryEventsCSV << "Title,Description,StartDay,StartMonth,StartYear,StartHour,StartMinute,"
                                 "EndDay,EndMonth,EndYear,EndHour,EndMinute\n";
 
@@ -372,7 +373,7 @@ void Helper::saveBorrowingHistory() {
 
 void Helper::saveOpeningSchedule() {
 
-        ofstream saveOpeningScheduleCSV("../../data/openingSchedule.csv");
+        ofstream saveOpeningScheduleCSV("../data/openingSchedule.csv");
         saveOpeningScheduleCSV << "OpenHour,OpenMinute,CloseHour,CloseMinute,IsOpen\n";
         for (int i=0; i < 7; i++){
             saveOpeningScheduleCSV << Library::mainLibrary().openingTimes[i].getHours() << ",";
@@ -385,15 +386,15 @@ void Helper::saveOpeningSchedule() {
     }
 
 void Helper::saveBorrowingUsers() {
-    Helper::saveUserData("../../data/borrowingUsers.csv", Library::mainLibrary().borrowingUsers);
+    Helper::saveUserData("../data/borrowingUsers.csv", Library::mainLibrary().borrowingUsers);
 }
 
 void Helper::saveReservationUsers() {
-    Helper::saveUserData("../../data/reservationUsers.csv",Library::mainLibrary().reservationUsers);
+    Helper::saveUserData("../data/reservationUsers.csv",Library::mainLibrary().reservationUsers);
 }
 
 void Helper::saveEmails(){
-    ofstream libraryEmailsCSV("../../data/emails.csv");
+    ofstream libraryEmailsCSV("../data/emails.csv");
 
     for (Email email : Library::mainLibrary().libraryEmails){
         libraryEmailsCSV << email.getEmail() <<"\n";
@@ -424,7 +425,7 @@ vector<string> Helper :: splitString(string line, char del) {
 void Helper::loadBorrowingHistory(){
     string line;
     vector<string> fields;
-    ifstream borrowingHistoryCSV("../../data/borrowingHistory.csv");
+    ifstream borrowingHistoryCSV("../data/borrowingHistory.csv");
     Library::mainLibrary().borrowingHistory.clear();
     if (borrowingHistoryCSV) {
         getline(borrowingHistoryCSV, line); // skip header
@@ -568,13 +569,13 @@ void Helper::loadUserData(string file, vector<User> &vec){
 }
 
 void Helper::loadBorrowingUsers(){
-    loadUserData("../../data/borrowingUsers.csv", Library::mainLibrary().borrowingUsers);
+    loadUserData("../data/borrowingUsers.csv", Library::mainLibrary().borrowingUsers);
 }
 
 void Helper::loadLibraryResources(){
     string line;
     vector<string> fields;
-    ifstream libraryResourcesCSV("../../data/libraryResources.csv");
+    ifstream libraryResourcesCSV("../data/libraryResources.csv");
     Library::mainLibrary().libraryResources.clear();
     if (libraryResourcesCSV) {
         getline(libraryResourcesCSV, line); // skip header
@@ -605,13 +606,13 @@ void Helper::loadLibraryResources(){
 }
 
 void Helper :: loadUsers(){
-    loadUserData("../../data/users.csv", Library::mainLibrary().libraryUsers);
+    loadUserData("../data/users.csv", Library::mainLibrary().libraryUsers);
 }
 
 void Helper::loadOpeningSchedule(){
     string line;
     vector<string> fields;
-    ifstream openingScheduleCSV("../../data/openingSchedule.csv");
+    ifstream openingScheduleCSV("../data/openingSchedule.csv");
     if (openingScheduleCSV) {
         getline(openingScheduleCSV, line); // skip header
         for(int i=0; i < 7; i++) {
@@ -626,14 +627,14 @@ void Helper::loadOpeningSchedule(){
 }
 
 void Helper::loadReservationUsers(){
-    loadUserData("../../data/reservationUsers.csv",Library::mainLibrary().reservationUsers);
+    loadUserData("../data/reservationUsers.csv",Library::mainLibrary().reservationUsers);
 }
 
 void Helper::loadLibraryEvents(){
     string line;
     vector<string> fields;
 
-    ifstream libraryEventsCSV("../../data/libraryEvents.csv");
+    ifstream libraryEventsCSV("../data/libraryEvents.csv");
     Library::mainLibrary().libraryEvents.clear();
     if (libraryEventsCSV) {
         getline(libraryEventsCSV, line); // skip header
@@ -657,7 +658,7 @@ void Helper::loadLibraryEvents(){
 
 void Helper::loadEmails(){
     string line;
-    ifstream libraryEmailsCSV("../../data/emails.csv");
+    ifstream libraryEmailsCSV("../data/emails.csv");
     Library::mainLibrary().libraryEmails.clear();
     if (libraryEmailsCSV) {
         while (getline(libraryEmailsCSV, line) && line.find_first_not_of(' ') != std::string::npos) {
@@ -739,8 +740,3 @@ void Helper :: sendEmailToAll(QString subject,QString body){
         sendEmail(QString::fromStdString(email.getEmail()), subject, body);
     }
 }
-
-
-
-
-
