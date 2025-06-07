@@ -17,7 +17,7 @@ loginWindow::loginWindow(LibraryManagementSystem* main, QWidget *parent)
 
 
     QLabel *background = new QLabel(this);
-    QPixmap pixmap("../../media/loginWindow.png");
+    QPixmap pixmap(":/media/media/loginWindow.png");
     background->setPixmap(pixmap);
     background->setScaledContents(true);
     background->resize(this->size());
