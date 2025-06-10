@@ -11,7 +11,6 @@ A C++ Library Management System built using the Qt framework. It includes featur
 - **Module:** Object-Oriented Programming  
 - [Email](mailto:mohamed.boukhames@ensia.edu.dz)
 
-//The project was just an exploration of some OOP concepts, and Qt Creator.
 
 ---
 
@@ -43,7 +42,7 @@ To build and run this project, you'll need:
 - C++17 compiler (GCC, Clang, or MSVC)
 - SmtpClient-for-Qt (included in the sent file)
 
-    Make sure Qt Creator is configured to create the build folder inside your project directory by adjusting the settings.
+    Please ensure that Qt Creator is configured to create the build folder inside the project's directory (./build) rather than a parent directory (../build).
 ---
 
 ## 🚀 Use
