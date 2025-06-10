@@ -43,7 +43,7 @@ To build and run this project, you'll need:
 - C++17 compiler (GCC, Clang, or MSVC)
 - SmtpClient-for-Qt (included in the sent file)
 
-Make sure Qt Creator is configured to create the build folder inside your project directory by adjusting the settings.
+    Make sure Qt Creator is configured to create the build folder inside your project directory by adjusting the settings.
 ---
 
 ## 🚀 Use
