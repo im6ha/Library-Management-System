@@ -29,6 +29,7 @@ A C++ Library Management System built using the Qt framework. It includes featur
 To build and run this project, you'll need:
 
 - Qt 6.2 or higher (with `qmake` or Qt Creator)
+(Ensure that Qt Creator is configured to create the build folder inside the project's directory (./build) rather than a parent directory (../build). So that CSV files can be accessed correctly.)
 - C++17 compiler (GCC, Clang, or MSVC)
 - SmtpClient-for-Qt (included in the sent file)
 
@@ -39,7 +40,7 @@ To build and run this project, you'll need:
 IMPORTANT NOTES:
     -This GUI does NOT save change automatically to allow testing without altering the data files each time.
         Make sure to click on the SAVE button (located at the main window) if you want to save any changes.
-    -Ensure that Qt Creator is configured to create the build folder inside the project's directory (./build) rather than a parent directory (../build). So that CSV                 files can be accessed correctly.
+
 
 1. **Login Window**:
 
