@@ -36,9 +36,11 @@ To build and run this project, you'll need:
 
 ## 🚀 Use
 
-IMPORTANT NOTE:
-    This GUI does NOT save change automatically to allow testing without altering the data files each time.
-    Make sure to click on the SAVE button (located at the main window) if you want to save any changes.
+IMPORTANT NOTES:
+
+    -This GUI does NOT save change automatically to allow testing without altering the data files each time.
+        Make sure to click on the SAVE button (located at the main window) if you want to save any changes.
+    -Ensure that Qt Creator is configured to create the build folder inside the project's directory (./build) rather than a parent directory (../build). So that CSV                 files can be accessed correctly.
 
 1. **Login Window**:
 
